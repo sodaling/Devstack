@@ -32,11 +32,11 @@ done
 # This can be removed once https://github.com/docker-library/mysql/issues/245 is resolved.
 sleep 20
 
-echo -e "MySQL ready"
+echo -e "MySQL ready,but dont creating databases and users"
 
-echo -e "${GREEN}Creating databases and users...${NC}"
-docker exec -i edx.devstack.mysql mysql -uroot mysql < provision.sql
-docker exec -i edx.devstack.mongo mongo < mongo-provision.js
+# echo -e "${GREEN}Creating databases and users...${NC}"
+# docker exec -i edx.devstack.mysql mysql -uroot mysql < provision.sql
+# docker exec -i edx.devstack.mongo mongo < mongo-provision.js
 
 ./provision-lms.sh
 
