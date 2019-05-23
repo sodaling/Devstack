@@ -15,6 +15,7 @@ done
 
 docker-compose exec lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
 docker-compose exec lms bash -c 'cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt && git clean -f'
+docker-compose exec studio bash -c 'cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt'
 
 #Installing prereqs crashes the process
 docker-compose restart lms
