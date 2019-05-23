@@ -24,16 +24,19 @@ else
 fi
 
 repos=(
-    "https://github.com/edx/course-discovery.git"
+    "https://github.com/e-ducation/course-discovery"
     "https://github.com/edx/credentials.git"
     "https://github.com/edx/cs_comments_service.git"
-    "https://github.com/edx/ecommerce.git"
+    "https://github.com/e-ducation/ecommerce"
     "https://github.com/edx/edx-e2e-tests.git"
     "https://github.com/edx/edx-notes-api.git"
-    "https://github.com/edx/edx-platform.git"
+    "https://github.com/e-ducation/edx-platform/tree/ironwood"
     "https://github.com/edx/xqueue.git"
     "https://github.com/edx/edx-analytics-pipeline.git"
-    "https://github.com/edx/gradebook.git"
+    "https://github.com/edx/gradebook.git",
+    "https://github.com/e-ducation/edx-membership",
+    "https://github.com/e-ducation/eliteu-payments"
+
 )
 
 private_repos=(
