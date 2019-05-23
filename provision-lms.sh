@@ -14,7 +14,7 @@ for app in "${apps[@]}"; do
 done
 
 docker-compose exec lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
-docker-compose exec lms bash -c 'cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt'
+docker-compose exec lms bash -c 'cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt && git clean -f'
 
 #Installing prereqs crashes the process
 docker-compose restart lms
