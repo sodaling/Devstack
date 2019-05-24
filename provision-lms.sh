@@ -15,6 +15,7 @@ done
 
 docker-compose exec lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
 
+# Bring edx-membership app online
 for app in "${apps[@]}"; do
     docker-compose exec $app bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt && git clean -f'
 done
