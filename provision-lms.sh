@@ -19,6 +19,8 @@ for app in "${apps[@]}"; do
     docker-compose exec $app bash -c 'cd /edx/app/edxapp/edx-membership && pip install -r requirements/base.txt && git clean -f'
 done
 
+./import_eliteu_json.sh
+
 #Installing prereqs crashes the process
 docker-compose restart lms
 
