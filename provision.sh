@@ -35,8 +35,8 @@ sleep 20
 echo -e "MySQL ready"
 
 echo -e "${GREEN}Creating databases and users...${NC}"
-docker exec -i edx.devstack.mysql mysql -uroot mysql < provision.sql
-docker exec -i edx.devstack.mongo mongo < mongo-provision.js
+#docker exec -i edx.devstack.mysql mysql -uroot mysql < provision.sql
+#docker exec -i edx.devstack.mongo mongo < mongo-provision.js
 
 ./provision-lms.sh
 
