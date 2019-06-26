@@ -5,12 +5,16 @@ set -x
 apps=( lms studio )
 
 # Load database dumps for the largest databases to save time
-#./load-db.sh edxapp
-#./load-db.sh edxapp_csmh
+./load-db.sh edxapp
+./load-db.sh edxapp_csmh
 
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
+done
+
+for app in "${apps[@]}"; do
+    docker-compose exec $app bash -c 'source /edx/app/edxapp/edxapp_env && pip install git+https://github.com/e-ducation/eliteu-payments'
 done
 
 docker-compose exec lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
